@@ -5,10 +5,7 @@ class LocalDataHandler{
   LocalDataHandler(this.key);
   void setLocalData(String value)async{
     final prefs = await SharedPreferences.getInstance();
-    if (value!=null){
-      await prefs.setString(key, value);
-    }
-
+    await prefs.setString(key, value);
   }
   Future<String> getLocalData()async{
     final prefs = await SharedPreferences.getInstance();

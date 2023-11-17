@@ -55,11 +55,11 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           Visibility(
             visible: !_isLoading,
-              child: _isCheckedNewTerm?HomeView():NewTermsPermissionView(),
+              child: _isCheckedNewTerm?const HomeView():const NewTermsPermissionView(),
           ),
           Visibility(
             visible: _isLoading,
-              child: CircularProgressIndicator(),
+              child: const CircularProgressIndicator(),
           ),
         ],
       )
