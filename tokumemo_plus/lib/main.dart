@@ -33,14 +33,12 @@ Future<void> main() async {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
+  // このウィジェットはアプリケーションのホームページです。これはステートフル（stateful）であり、
+  // つまり、以下で定義されるStateオブジェクトを持ち、その見た目に影響を与えるフィールドを含んでいます。
 
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
+  // このクラスはステートの設定です。これは、親（この場合はアプリウィジェット）によって提供される値
+  // （このケースではタイトル）を保持し、Stateのbuildメソッドで使用されます。ウィジェットのサブクラス内の
+  // フィールドは常に「final」としてマークされます。
 
   final String title;
 
@@ -53,47 +51,42 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
+      // このsetStateへの呼び出しは、FlutterフレームワークにこのState内で何かが変更されたことを伝えます。
+      // これにより、以下のbuildメソッドが再実行され、表示が更新された値を反映することができます。
+      // もし_setCounterを変更したがsetState()を呼び出さなかった場合、buildメソッドは再び呼び出されず、
+      // したがって何も起こらないように見えるでしょう。
       _counter++;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
+    // このメソッドは、上記の_incrementCounterメソッドが行うように、setStateが呼び出されるたびに再実行されます。
     //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+    // Flutterフレームワークは、buildメソッドの再実行を高速にするように最適化されています。
+    // そのため、ウィジェットのインスタンスを個別に変更するのではなく、更新が必要なものを
+    // すべて再構築することができます。
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
+        // ここでは、App.buildメソッドによって作成されたMyHomePageオブジェクトから値を取得し、
+        // それを使用してアプリバーのタイトルを設定します。
         title: Text(widget.title),
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
+        // Centerはレイアウトウィジェットです。これは単一の子を取り、
+        // 親の中央に配置します。
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
+          // Columnもレイアウトウィジェットです。子ウィジェットのリストを取り、
+          // それらを垂直に配置します。デフォルトでは、自身を水平方向に子ウィジェットに合わせてサイズ調整し、
+          // 親と同じ高さになるように試みます。
           //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
+          // 各ウィジェットのワイヤーフレームを見るために「デバッグペインティング」を呼び出します
+          // （コンソールで「p」を押す、Android StudioのFlutterインスペクターで「Toggle Debug Paint」アクションを選択する、
+          // またはVisual Studio Codeで「Toggle Debug Paint」コマンドを使用する）。
           //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
+          // Columnには、自身のサイズを制御し、子ウィジェットを配置するさまざまなプロパティがあります。
+          // ここではmainAxisAlignmentを使用して子ウィジェットを垂直方向に中央に配置しています。
+          // なぜなら、Columnは垂直なのでメイン軸は垂直軸です（クロス軸は水平軸になります）。
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
@@ -110,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ), // この末尾のコンマは、buildメソッドの自動フォーマットをより良くするためのものです。
     );
   }
 }
