@@ -70,7 +70,7 @@ class _NewTermsPermissionView extends State<NewTermsPermissionView>{
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: const Text("close"),
+              child: const Text("閉じる"),
             ),
           ],
         ),

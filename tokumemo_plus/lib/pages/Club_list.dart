@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-class SettingsPage extends StatelessWidget{
-  const SettingsPage({super.key});
+class ClublistPage extends StatelessWidget{
+  const ClublistPage({super.key});
   @override
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: const Text('設定画面'),
+        title: const Text('部活動紹介リスト'),
       ),
-      body:Container(),
     );
   }
 }

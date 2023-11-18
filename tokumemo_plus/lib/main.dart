@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:tokumemo_plus/api/getDeliverdAppVersion.dart';
+import 'package:tokumemo_plus/pages/Home.dart';
+import 'package:tokumemo_plus/router/router.dart';
 import 'package:tokumemo_plus/utils/check_new_terms.dart';
-import 'package:tokumemo_plus/pages/Base.dart';
 import 'package:tokumemo_plus/pages/NewTermPermission.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 void main() {
@@ -15,21 +16,18 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: router,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
   final String title;
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -45,9 +43,9 @@ class _MyHomePageState extends State<MyHomePage> {
       deliverdVersion=await getDeliverdAppVersion();
       _isCheckedNewTerm=await compareNewTerms(deliverdVersion as Future<String>);
       setState(() {
-        FlutterNativeSplash.remove();
         _isCheckedNewTerm;
         _isLoading=false;
+        FlutterNativeSplash.remove();
       });
     });
   }
@@ -58,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           Visibility(
             visible: !_isLoading,
-              child: _isCheckedNewTerm?const Base():const NewTermsPermissionView(),
+              child: _isCheckedNewTerm?const Home():const NewTermsPermissionView(),
           ),
           Visibility(
             visible: _isLoading,
