@@ -1,8 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:tokumemo_plus/components/TermPermissionWidgets.dart';
 import 'package:tokumemo_plus/utils/local_data_handler.dart';
-import 'package:tokumemo_plus/widgets/HomeView.dart';
+import 'package:tokumemo_plus/pages/Base.dart';
 class NewTermsPermissionView extends StatefulWidget{
   const NewTermsPermissionView({super.key});
   @override
@@ -44,6 +45,8 @@ class _NewTermsPermissionView extends State<NewTermsPermissionView>{
     super.dispose();
   }
   Future<dynamic> agereeNewTermAction(String newversion)async{
+    //画面遷移中にSnackBarを表示させたい
+    //https://qiita.com/MLLB/items/498539380168bf33bc9c
     final snackbar=SnackBar(
       content: const Text('新しい規約に同意しました'),
       action: SnackBarAction(
@@ -55,6 +58,23 @@ class _NewTermsPermissionView extends State<NewTermsPermissionView>{
     final LocalDataHandler newVersionUpdateHandler=LocalDataHandler("version");
     var result=newVersionUpdateHandler.setLocalData(newversion);
     return result;
+  }
+  _privacyPolicyDialog(){
+    showDialog(
+        context: context,
+        builder: (context)=>AlertDialog(
+          title: const Text('プライバシーポリシー'),
+          content:const PrivacyPolicyWidget(privacyText: 'あああああ'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text("close"),
+            ),
+          ],
+        ),
+    );
   }
   //TermTextはAPIから取得予定
   String termText="トクメモ＋は「学生の学生による学生のためのアプリ開発」 を掲げて学生同士で企画、設計、開発に取り組み 公開リリースすることが出来ました\n"
@@ -87,6 +107,8 @@ class _NewTermsPermissionView extends State<NewTermsPermissionView>{
                 ),
               ),
               Row(
+                //ボタンのデザインの参考
+                //https://qiita.com/coka__01/items/30716f42e4a909334c9f
                 children: [
                   Visibility(
                       visible: !_isShow,
@@ -95,12 +117,10 @@ class _NewTermsPermissionView extends State<NewTermsPermissionView>{
                           agereeNewTermAction('0.0.1'),
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context)=>const HomeView())
+                            MaterialPageRoute(builder: (context)=>const Base())
                           )
                         },
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.blue,
-                          onPrimary: Colors.black,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
@@ -114,8 +134,6 @@ class _NewTermsPermissionView extends State<NewTermsPermissionView>{
                       onPressed: (){},
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.black12,
-                        primary: Colors.blue,
-                        onPrimary: Colors.black,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -124,7 +142,7 @@ class _NewTermsPermissionView extends State<NewTermsPermissionView>{
                     ),
                     ),
                   ElevatedButton(
-                      onPressed: (){},
+                      onPressed: ()=>_privacyPolicyDialog(),
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),

@@ -9,7 +9,7 @@ class LocalDataHandler{
   }
   Future<String> getLocalData()async{
     final prefs = await SharedPreferences.getInstance();
-    String nowVersion = prefs.getString(key) ?? "0.0.0";
+    String nowVersion = prefs.getString(key) ?? " ";
     return nowVersion;
   }
   void removeLocalData()async{

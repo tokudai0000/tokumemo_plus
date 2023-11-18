@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:tokumemo_plus/api/getDeliverdAppVersion.dart';
 import 'package:tokumemo_plus/utils/check_new_terms.dart';
-import 'package:tokumemo_plus/widgets/HomeView.dart';
-import 'package:tokumemo_plus/widgets/NewTermPermission.dart';
-
+import 'package:tokumemo_plus/pages/Base.dart';
+import 'package:tokumemo_plus/pages/NewTermPermission.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 void main() {
   final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -35,12 +36,14 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   bool _isCheckedNewTerm=false;
+  late String deliverdVersion;
   bool _isLoading=true;
   @override
   void initState() {
     super.initState();
     Future(() async {
-      _isCheckedNewTerm=await compareNewTerms();
+      deliverdVersion=await getDeliverdAppVersion();
+      _isCheckedNewTerm=await compareNewTerms(deliverdVersion as Future<String>);
       setState(() {
         FlutterNativeSplash.remove();
         _isCheckedNewTerm;
@@ -55,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           Visibility(
             visible: !_isLoading,
-              child: _isCheckedNewTerm?const HomeView():const NewTermsPermissionView(),
+              child: _isCheckedNewTerm?const Base():const NewTermsPermissionView(),
           ),
           Visibility(
             visible: _isLoading,
