@@ -152,10 +152,6 @@ class _NewTermsPermissionView extends State<NewTermsPermissionView>{
                   )
                 ],
               ),
-              ElevatedButton(
-                  onPressed:(){},
-                  child: const Text(''),
-                  ),
             ],
           ),
         ),
