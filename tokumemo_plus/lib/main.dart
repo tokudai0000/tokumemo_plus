@@ -1,28 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:tokumemo_plus/app.dart';
 
 // Futureを使うことで、非同期的に
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  late final SharedPreferences sharedPreferences;
-
-  // pubspec.yamlのsdkにて3.0.0以上にする必要がある
-  await (
-    // 'package:flutter/services.dart'から、画面を縦固定
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]),
-
-    Future(() async {
-      sharedPreferences = await SharedPreferences.getInstance();
-    }),
-  ).wait;
-
   runApp(
     ProviderScope(
       child: const App(),
