@@ -32,6 +32,9 @@ dependencies:
   # Navigation
   go_router: ^12.1.1
 
+  # 起動画面(表示設定はpubspec.yaml内の下部にある)
+  flutter_native_splash:
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -49,5 +52,12 @@ flutter:
   uses-material-design: true
 
   # imagesの読み込み先を指定
-#  assets:
-#    - assets/images/
+  assets:
+    - assets/images/
+
+# 変更を加えたら次のコードで起動画面を生成して反映する必要がある
+# flutter pub run flutter_native_splash:create
+flutter_native_splash:
+  color: '#FFFFFF'
+  image: 'assets/images/tokumemo_logo.png'
+  fullscreen: true
