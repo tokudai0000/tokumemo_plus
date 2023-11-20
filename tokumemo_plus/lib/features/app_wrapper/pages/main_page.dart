@@ -7,6 +7,8 @@ import 'package:page_transition/page_transition.dart';
 import '../../../core/utils/tab_tap_operation_provider.dart';
 import '../../home/pages/home_page.dart';
 import '../../setting/pages/setting_page.dart';
+import '../../club_list/pages/club_list_page.dart';
+import '../../news/pages/news_page.dart';
 import 'widgets/tab_navigator.dart';
 
 class MainPage extends HookConsumerWidget {
@@ -40,6 +42,16 @@ class MainPage extends HookConsumerWidget {
         GlobalKey<NavigatorState>(),
         HomePage.pageName,
         const HomePage(),
+        ),
+        (
+        GlobalKey<NavigatorState>(),
+        ClubListPage.pageName,
+        const ClubListPage(),
+        ),
+        (
+        GlobalKey<NavigatorState>(),
+        NewsPage.pageName,
+        const NewsPage(),
         ),
         (
         GlobalKey<NavigatorState>(),
@@ -84,12 +96,22 @@ class MainPage extends HookConsumerWidget {
             NavigationDestination(
               selectedIcon: Icon(Icons.home),
               icon: Icon(Icons.home_outlined),
-              label: 'タブ1',
+              label: 'Home',
+            ),
+            NavigationDestination(
+              selectedIcon: Icon(Icons.feed),
+              icon: Icon(Icons.feed_outlined),
+              label: 'News',
+            ),
+            NavigationDestination(
+              selectedIcon: Icon(Icons.groups_3),
+              icon: Icon(Icons.groups_3_outlined),
+              label: 'ClubList',
             ),
             NavigationDestination(
               selectedIcon: Icon(Icons.settings),
               icon: Icon(Icons.settings_outlined),
-              label: 'タブ4',
+              label: 'Setting',
             ),
           ],
         ),
