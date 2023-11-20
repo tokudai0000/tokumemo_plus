@@ -4,7 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 class SettingPage extends HookConsumerWidget {
   const SettingPage({super.key});
 
-  static String get pageName => 'settings';
+  static String get pageName => 'setting';
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

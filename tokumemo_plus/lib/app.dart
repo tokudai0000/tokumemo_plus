@@ -12,9 +12,10 @@ class App extends ConsumerWidget {
     return MaterialApp.router(
       title: 'トクメモ＋',
 
-      routeInformationParser: router.routeInformationParser,
-      routerDelegate: router.routerDelegate,
-      routeInformationProvider: router.routeInformationProvider,
+      // ルーティングに関連する設定
+      routeInformationParser: router.routeInformationParser, // URLからルート情報を解析
+      routerDelegate: router.routerDelegate, // アプリのナビゲーションロジックを担当
+      routeInformationProvider: router.routeInformationProvider, // 現在のルート情報を提供
     );
   }
 }

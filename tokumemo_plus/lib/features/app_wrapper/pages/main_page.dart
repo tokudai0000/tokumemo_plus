@@ -15,12 +15,12 @@ class MainPage extends HookConsumerWidget {
   static String get pageName => 'main';
   static String get pagePath => '/$pageName';
 
-  /// go_routerの画面遷移
+  /// go_routerを使用した画面遷移のメソッドを定義
   static void go(BuildContext context) {
     context.go(pagePath);
   }
 
-  /// 従来の画面遷移
+  /// 従来のNavigatorを使用した画面遷移のメソッドを定義
   static Future<void> showNav1(BuildContext context) =>
       Navigator.of(context, rootNavigator: true).pushReplacement<void, void>(
         PageTransition(
@@ -69,15 +69,14 @@ class MainPage extends HookConsumerWidget {
         ),
         bottomNavigationBar: NavigationBar(
           onDestinationSelected: (int index) {
-            /// 同じタブが選択されたことを通知する
+            // 同じタブが選択されたことを通知する
             if (index == selectedTabIndex) {
               final pageName = widgets[index].$2;
               ref
                   .read(tabTapOperationProviders(pageName))
                   .call(TabTapOperationType.duplication);
             }
-
-            /// タブを切り替える
+            // タブを切り替える
             selectedTabIndexState.value = index;
           },
           selectedIndex: selectedTabIndex,
