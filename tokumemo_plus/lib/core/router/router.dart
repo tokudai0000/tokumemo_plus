@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:tokumemo_plus/features/error/pages/error_page.dart';
 
 import '../../features/features.dart';
 
@@ -25,7 +26,7 @@ final routerProvider = Provider((ref) {
     ],
     // エラー時はエラー用の画面を表示
     errorBuilder: (context, state) {
-      return const MainPage();
+      return const ErrorPage();
     },
   );
 });
