@@ -4,6 +4,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import '../../../core/widgets/buttons/rounded_button.dart';
 import '../../app_wrapper/pages/main_page.dart';
 
+/// エラー時に表示されるページ
 class ErrorPage extends HookWidget {
   const ErrorPage({
     super.key,

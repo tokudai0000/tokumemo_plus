@@ -1,15 +1,15 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-// コードの可読性を高めるために、PageNameとString型は同じ意味を持つ
+/// コードの可読性を高めるために、PageNameとString型は同じ意味を持つ
 typedef PageName = String;
 
-// タブタップの操作タイプ
+/// タブタップの操作タイプ
 enum TabTapOperationType {
   duplication,
 }
 
-// タブタップの操作に関連するProviderを定義
-// このProviderは、ページ名に基づいて異なるTabTapOperationオブジェクトを返す
+/// タブタップの操作に関連するProviderを定義
+/// このProviderは、ページ名に基づいて異なるTabTapOperationオブジェクトを返す
 final tabTapOperationProviders =
 Provider.family.autoDispose<TabTapOperation, PageName>((ref, _) {
   final tabTapAction = TabTapOperation();
@@ -20,19 +20,19 @@ Provider.family.autoDispose<TabTapOperation, PageName>((ref, _) {
 });
 
 class TabTapOperation {
-  // タブタップ操作のリスナーを保持する
+  /// タブタップ操作のリスナーを保持する
   void Function(TabTapOperationType)? _listener;
-  // リスナーを追加するメソッド。TabTapOperationTypeに基づいたアクションを行う
+  /// リスナーを追加するメソッド。TabTapOperationTypeに基づいたアクションを行う
   void addListener(void Function(TabTapOperationType) listener) {
     _listener = listener;
   }
 
-  // TabTapOperationTypeに基づいてリスナーを呼び出すメソッド
+  /// TabTapOperationTypeに基づいてリスナーを呼び出すメソッド
   void call(TabTapOperationType actionType) {
     _listener?.call(actionType);
   }
 
-  // インスタンスが不要になった時にリソースを解放するためのメソッド
+  /// インスタンスが不要になった時にリソースを解放するためのメソッド
   void dispose() {
     _listener = null;
   }

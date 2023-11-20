@@ -4,7 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../features/features.dart';
 import '../../features/error/pages/error_page.dart';
 
-// アプリのルーティング(画面遷移)について "go_router"を使用
+/// アプリのルーティング(画面遷移)について "go_router"を使用
 final routerProvider = Provider((ref) {
   return GoRouter(
     // アプリ起動後の初期画面を指定

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+/// 自作のカスタムボタン
 class RoundedButton extends StatelessWidget {
   const RoundedButton({
     this.height,
