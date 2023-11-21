@@ -79,13 +79,6 @@ class MainPage extends HookConsumerWidget {
       ),
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
-          // 同じタブが選択されたことを通知する
-          if (index == selectedTabIndex) {
-          final pageName = widgets[index].$2;
-          ref
-              .read(tabTapOperationProviders(pageName))
-              .call(TabTapOperationType.duplication);
-          }
           // タブを切り替える
           selectedTabIndexState.value = index;
         },
