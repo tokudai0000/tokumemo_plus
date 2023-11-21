@@ -8,7 +8,7 @@ class App extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final router = ref.watch(routerProvider);
+    final router = routerProvider;
     return MaterialApp.router(
       title: 'トクメモ＋',
 
