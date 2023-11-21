@@ -14,11 +14,8 @@ final routerProvider = GoRouter(
     GoRoute(
       path: MainPage.pagePath,
       name: MainPage.pageName,
-      pageBuilder: (_, state) {
-        // 画面遷移のアニメーションなしで表示
-        return NoTransitionPage<void>(
-          child: const MainPage(),
-        );
+      builder: (_, state) {
+        return const MainPage();
       },
     ),
   ],
