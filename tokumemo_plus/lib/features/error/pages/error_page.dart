@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
-import '../../../core/widgets/buttons/rounded_button.dart';
 import '../../app_wrapper/pages/main_page.dart';
 
 /// エラー時に表示されるページ
@@ -31,16 +30,21 @@ class ErrorPage extends HookWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(top: 8),
-              child: RoundedButton(
-                width: 200,
-                height: 40,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.blue, // ボタンの背景色
+                  fixedSize: const Size(200, 40), // ボタンのサイズ
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0), // 角の丸み
+                  ),
+                ),
+                onPressed: () {
+                  MainPage.go(context);
+                },
                 child: const Text(
                   'Go Back',
                   style: TextStyle(color: Colors.white),
                 ),
-                onTap: () {
-                  MainPage.go(context);
-                },
               ),
             ),
           ],
