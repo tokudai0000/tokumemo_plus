@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:page_transition/page_transition.dart';
 
-import '../../../core/utils/tab_tap_operation_provider.dart';
 import '../../home/pages/home_page.dart';
 import '../../setting/pages/setting_page.dart';
 import '../../club_list/pages/club_list_page.dart';
@@ -65,56 +64,54 @@ class MainPage extends HookConsumerWidget {
     final selectedTabIndexState = useState(0);
     final selectedTabIndex = selectedTabIndexState.value;
 
-    return PopScope(
-      canPop: false,
-      child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        body: IndexedStack(
-          index: selectedTabIndex,
-          children: List.generate(
-            widgets.length,
-                (index) => TabNavigator(
-              navigatorKey: widgets[index].$1,
-              page: widgets[index].$3,
-            ),
+    return Scaffold(
+      // キーボードが表示されたときにScaffoldのボディがリサイズされるのを防ぐ
+      resizeToAvoidBottomInset: false,
+      body: IndexedStack(
+        index: selectedTabIndex,
+        children: List.generate(
+          widgets.length,
+              (index) => TabNavigator(
+            navigatorKey: widgets[index].$1,
+            page: widgets[index].$3,
           ),
         ),
-        bottomNavigationBar: NavigationBar(
-          onDestinationSelected: (int index) {
-            // 同じタブが選択されたことを通知する
-            if (index == selectedTabIndex) {
-              final pageName = widgets[index].$2;
-              ref
-                  .read(tabTapOperationProviders(pageName))
-                  .call(TabTapOperationType.duplication);
-            }
-            // タブを切り替える
-            selectedTabIndexState.value = index;
-          },
-          selectedIndex: selectedTabIndex,
-          destinations: const <Widget>[
-            NavigationDestination(
-              selectedIcon: Icon(Icons.home),
-              icon: Icon(Icons.home_outlined),
-              label: 'Home',
-            ),
-            NavigationDestination(
-              selectedIcon: Icon(Icons.feed),
-              icon: Icon(Icons.feed_outlined),
-              label: 'News',
-            ),
-            NavigationDestination(
-              selectedIcon: Icon(Icons.groups_3),
-              icon: Icon(Icons.groups_3_outlined),
-              label: 'ClubList',
-            ),
-            NavigationDestination(
-              selectedIcon: Icon(Icons.settings),
-              icon: Icon(Icons.settings_outlined),
-              label: 'Setting',
-            ),
-          ],
-        ),
+      ),
+      bottomNavigationBar: NavigationBar(
+        onDestinationSelected: (int index) {
+          // 同じタブが選択されたことを通知する
+          if (index == selectedTabIndex) {
+          final pageName = widgets[index].$2;
+          ref
+              .read(tabTapOperationProviders(pageName))
+              .call(TabTapOperationType.duplication);
+          }
+          // タブを切り替える
+          selectedTabIndexState.value = index;
+        },
+        selectedIndex: selectedTabIndex,
+        destinations: const <Widget>[
+          NavigationDestination(
+            selectedIcon: Icon(Icons.home),
+            icon: Icon(Icons.home_outlined),
+            label: 'Home',
+          ),
+          NavigationDestination(
+            selectedIcon: Icon(Icons.feed),
+            icon: Icon(Icons.feed_outlined),
+            label: 'News',
+          ),
+          NavigationDestination(
+            selectedIcon: Icon(Icons.groups_3),
+            icon: Icon(Icons.groups_3_outlined),
+            label: 'ClubList',
+          ),
+          NavigationDestination(
+            selectedIcon: Icon(Icons.settings),
+            icon: Icon(Icons.settings_outlined),
+            label: 'Setting',
+          ),
+        ],
       ),
     );
   }
