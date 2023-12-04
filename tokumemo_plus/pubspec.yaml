@@ -19,6 +19,8 @@ dependencies:
   cupertino_icons: ^1.0.2
 
   # Riverpod
+  flutter_riverpod:
+  # 機能は最小限に。必要な時に使用
   hooks_riverpod:
 
   # Transition

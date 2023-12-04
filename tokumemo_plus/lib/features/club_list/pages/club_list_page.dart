@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ClubListPage extends HookConsumerWidget {
+class ClubListPage extends ConsumerWidget {
   const ClubListPage({super.key});
 
   static String get pageName => 'club_list';
