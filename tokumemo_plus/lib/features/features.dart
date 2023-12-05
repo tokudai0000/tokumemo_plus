@@ -5,3 +5,4 @@
 export 'app_wrapper/pages/main_page.dart';
 export 'home/pages/home_page.dart';
 export 'setting/pages/setting_page.dart';
+export 'user_agreement/pages/user_agreement_page.dart';

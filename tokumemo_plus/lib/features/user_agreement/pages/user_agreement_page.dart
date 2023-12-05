@@ -5,6 +5,7 @@ class UserAgreementPage extends ConsumerWidget {
   const UserAgreementPage({super.key});
 
   static String get pageName => 'user_agreement';
+  static String get pagePath => '/$pageName';
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

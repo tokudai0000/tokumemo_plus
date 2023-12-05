@@ -10,6 +10,15 @@ final routerProvider = GoRouter(
 
   // アプリ内の画面（ルート）のリストを定義
   routes: [
+    // ユーザー同意画面
+    GoRoute(
+      path: UserAgreementPage.pagePath,
+      name: UserAgreementPage.pageName,
+      builder: (_, state) {
+        return const UserAgreementPage();
+      },
+    ),
+
     // メイン画面
     GoRoute(
       path: MainPage.pagePath,
