@@ -39,6 +39,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  # アプリアイコン生成
+  flutter_launcher_icons:
+
   # Static analysis
   # 静的解析ツール
   pedantic_mono:
@@ -61,3 +64,13 @@ flutter_native_splash:
   color: '#FFFFFF'
   image: 'assets/images/tokumemo_logo.png'
   fullscreen: true
+
+# 変更を加えたら次のコードでアイコンを生成して反映する必要がある
+# flutter pub run flutter_launcher_icons:main
+# AndroidはAppIconが起動画面に表示されるため、オレンジ枠線部分を削除したい
+# アイコンサイズ：iOS[1024×1024],Android[512×512]
+flutter_icons:
+  android: true
+  ios: true
+  image_path_android: "assets/images/tokumemo_logo.png"
+  image_path_ios: "assets/images/tokumemo_icon.png"
