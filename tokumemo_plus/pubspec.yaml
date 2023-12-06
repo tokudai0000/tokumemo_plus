@@ -23,6 +23,9 @@ dependencies:
   # 機能は最小限に。必要な時に使用
   hooks_riverpod:
 
+  # WebView
+  webview_flutter:
+
   # Transition
   page_transition:
 
