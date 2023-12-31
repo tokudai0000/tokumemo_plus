@@ -12,33 +12,28 @@ class UserAgreementPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       body: SafeArea(
-        // 縦方向に整列
         child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween, // 子ウィジェット間のスペースを均等に分ける
+          // crossAxisAlignment: CrossAxisAlignment.center, // 必要に応じて調整
+
           children: [
-            // ロゴ
-            _buildLogo(),
-            // トクメモ＋の歴史について
+            _buildLogo(), // ロゴ// トクメモ＋の歴史について
             _buildHistoryContainer(),
+              // Align(
+              //   alignment: Alignment.bottomLeft, // 下部中央に配置
+              //   child: ElevatedButton(
+              //     onPressed: () {
+              //       // ボタンの動作をここに書く
+              //     },
+              //     child: Text('ボタン'),
+              //   ),
+              // ),
 
-            // 同意するボタン
-            _buildAgreeButton(112, 767),
-
-
-
-        // // 同意して始めるボタン
-        // _buildButton(99, 2140, '同意して始める', Color(0xFFFFC000), 14),
-        // // プライバシーポリシー ボタン
-        // _buildButton(202, 2039, 'プライバシーポリシー', Color(0x146750A4), 12),
-        // // 利用規約 ボタン
-        // _buildButton(11, 2039, '利用規約', Color(0x146750A4), 12),
-        // // 利用規約とプライバシーポリシーのタブ
-        // _buildTab(7, 729, '利用規約'),
-        // _buildTab(194, 729, 'プライバシーポリシー'),
-        // // 同意するボタン
-        // _buildAgreeButton(112, 767),
+            _buildAgreeButton(112, 767), // 同意するボタン
           ],
         ),
-      )
+      ),
     );
   }
 
@@ -57,8 +52,7 @@ class UserAgreementPage extends ConsumerWidget {
 
   Widget _buildHistoryContainer() {
     return Container(
-        width: 375,
-        height: 412,
+        height: 600,
         child: WebViewWidget(
           controller: WebViewController()
             ..loadRequest(Uri.parse("https://tokumemo.notion.site/81a6f545f13b409c8b6298ad5e03e992")),
@@ -130,10 +124,10 @@ class UserAgreementPage extends ConsumerWidget {
     );
   }
 
-  Widget _buildAgreeButton(double left, double top) {
+  Widget _buildAgreeButton(double left, double bottom) {
     return Positioned(
       left: left,
-      top: top,
+      bottom: bottom,
       child: Container(
         width: 150,
         height: 36,
