@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'json_types.dart';
+import './types_api/type_term_text_version.dart';
 // 生成されるdartファイルを記述
 part 'encoder.freezed.dart';
 part 'encoder.g.dart';
@@ -9,7 +9,7 @@ part 'encoder.g.dart';
 class CurrentTermVersion with _$CurrentTermVersion{
   // プロパティを指定
   const factory CurrentTermVersion({
-    required String currentTermVersion
+    required TypeEncodeTermTextJson currentTermVersion
   })= _CurrentTermVersion;
   // json形式で受け取るためのコードを生成するために記述
   factory CurrentTermVersion.fromJson(Map<String,dynamic> json)=> _$CurrentTermVersionFromJson(json);
@@ -18,11 +18,39 @@ class CurrentTermVersion with _$CurrentTermVersion{
 class AdItems with _$AdItems{
   // プロパティを指定
   const factory AdItems({
-    required Map<String> prItems
-    required Map<String> univItems
-
-  })= _CurrentTermVersion;
+    required List<TypeAdItem> prItems,
+    required List<TypeAdItem> univItems
+  })= _AdItems;
   // json形式で受け取るためのコードを生成するために記述
-  factory CurrentTermVersion.fromJson(Map<String,dynamic> json)=> _$CurrentTermVersionFromJson(json);
+  factory AdItems.fromJson(Map<String,dynamic> json)=> _$AdItemsFromJson(json);
+}
+@freezed
+class HelpMessageAgree with _$HelpMessageAgree{
+  const factory HelpMessageAgree({
+    required String helpmessageAgree
+  })= _HelpMessageAgree;
+  factory HelpMessageAgree.fromJson(Map<String,dynamic> json)=> _$HelpMessageAgreeFromJson(json);
+}
+@freezed
+class HomeEventInfo with _$HomeEventInfo{
+  const factory HomeEventInfo({
+    required List<TypePopupItems> popupItems,
+    required List<TypeButtonItems> buttomItems
+  })= _HomeEventInfo;
+  factory HomeEventInfo.fromJson(Map<String,dynamic> json)=> _$HomeEventInfoFromJson(json);
+}
+@freezed
+class NumberOfUsers with _$NumberOfUsers{
+  const factory NumberOfUsers({
+    required String numberOfUsers
+  })= _NumberOfUsers;
+  factory NumberOfUsers.fromJson(Map<String,dynamic> json)=> _$NumberOfUsersFromJson(json);
+}
+@freezed
+class TermText with _$TermText{
+  const factory TermText({
+    required String termText
+  })= _TermText;
+  factory TermText.fromJson(Map<String,dynamic> json)=> _$TermTextFromJson(json);
 }
 
