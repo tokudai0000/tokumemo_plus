@@ -1,7 +1,12 @@
 import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';
-import 'encoder.dart';
-part 'api.g.dart';
+import 'adminAPI/aditemAPI.dart';
+import 'currentTermVersionAPI/currentTermVersionAPI.dart';
+import 'helpMessageAgreeAPI/helpMessageAgreeAPI.dart';
+import 'numberOfUsersAPI/numberOfUsersAPI.dart';
+import 'termTextAPI/termTextAPI.dart';
+import 'homeEventInfoAPI/homeEventInfoAPI.dart';
+part 'apis.g.dart';
 
 // ここにapiのエンドポイントを記載します
 @RestApi(baseUrl: "https://tokudai0000.github.io/tokumemo_resource/")
