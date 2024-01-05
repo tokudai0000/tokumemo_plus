@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 part 'popItems.g.dart';
 part 'popItems.freezed.dart';
 
@@ -12,6 +13,5 @@ class PopupItems with _$PopupItems {
     required String description,
   }) = _PopupItems;
   // json形式で受け取るためのコードを生成するために記述
-  factory PopupItems.fromJson(Map<String, dynamic> json) =>
-      _$PopupItemsFromJson(json);
+  factory PopupItems.fromJson(Map<String, dynamic> json) => _$PopupItemsFromJson(json);
 }

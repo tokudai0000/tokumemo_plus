@@ -6,11 +6,13 @@ import 'helpMessageAgreeAPI/helpMessageAgreeAPI.dart';
 import 'numberOfUsersAPI/numberOfUsersAPI.dart';
 import 'termTextAPI/termTextAPI.dart';
 import 'homeEventInfoAPI/homeEventInfoAPI.dart';
+
 part 'apis.g.dart';
 
 // ここにapiのエンドポイントを記載します
 @RestApi(baseUrl: "https://tokudai0000.github.io/tokumemo_resource/")
 abstract class RestClient {
+
   factory RestClient(Dio dio, {String baseUrl}) = _RestClient;
   //current_term_version.jsonからバージョンを取得
   @GET("api/stub/current_term_version.json")
