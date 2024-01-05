@@ -1,9 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'prItems.dart';
-import 'univItems.dart';
+import 'pr_items.dart';
+import 'univ_items.dart';
 
-part 'aditemAPI.g.dart';
-part 'aditemAPI.freezed.dart';
+part 'aditem_api.g.dart';
+part 'aditem_api.freezed.dart';
 
 @freezed
 class AdItems with _$AdItems {

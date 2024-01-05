@@ -1,10 +1,10 @@
 // ignore: file_names
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'popItems.dart';
-import 'buttonItems.dart';
+import 'pop_items.dart';
+import 'button_items.dart';
 
-part 'homeEventInfoAPI.g.dart';
-part 'homeEventInfoAPI.freezed.dart';
+part 'home_event_info_api.g.dart';
+part 'home_event_info_api.freezed.dart';
 
 @freezed
 class HomeEventInfo with _$HomeEventInfo {

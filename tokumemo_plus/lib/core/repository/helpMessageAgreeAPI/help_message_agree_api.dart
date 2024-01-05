@@ -1,8 +1,8 @@
 // ignore: file_names
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'helpMessageAgreeAPI.g.dart';
-part 'helpMessageAgreeAPI.freezed.dart';
+part 'help_message_agree_api.g.dart';
+part 'help_message_agree_api.freezed.dart';
 
 @freezed
 class HelpMessageAgree with _$HelpMessageAgree {

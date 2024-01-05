@@ -1,11 +1,11 @@
 import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';
-import 'adminAPI/aditemAPI.dart';
-import 'currentTermVersionAPI/currentTermVersionAPI.dart';
-import 'helpMessageAgreeAPI/helpMessageAgreeAPI.dart';
-import 'numberOfUsersAPI/numberOfUsersAPI.dart';
-import 'termTextAPI/termTextAPI.dart';
-import 'homeEventInfoAPI/homeEventInfoAPI.dart';
+import 'adminAPI/aditem_api.dart';
+import 'currentTermVersionAPI/current_term_version_api.dart';
+import 'helpMessageAgreeAPI/help_message_agree_api.dart';
+import 'numberOfUsersAPI/number_of_users_api.dart';
+import 'termTextAPI/term_text_api.dart';
+import 'homeEventInfoAPI/home_event_info_api.dart';
 
 part 'apis.g.dart';
 

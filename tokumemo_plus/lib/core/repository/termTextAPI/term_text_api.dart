@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'termTextAPI.g.dart';
-part 'termTextAPI.freezed.dart';
+part 'term_text_api.g.dart';
+part 'term_text_api.freezed.dart';
 
 @freezed
 class TermText with _$TermText {

@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'univItems.g.dart';
-part 'univItems.freezed.dart';
+part 'univ_items.g.dart';
+part 'univ_items.freezed.dart';
 
 @freezed
 class UnivItems with _$UnivItems{

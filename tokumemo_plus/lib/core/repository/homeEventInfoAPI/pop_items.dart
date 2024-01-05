@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'popItems.g.dart';
-part 'popItems.freezed.dart';
+part 'pop_items.g.dart';
+part 'pop_items.freezed.dart';
 
 @freezed
 class PopupItems with _$PopupItems {

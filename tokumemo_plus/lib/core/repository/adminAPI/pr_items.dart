@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'prItems.g.dart';
-part 'prItems.freezed.dart';
+part 'pr_items.g.dart';
+part 'pr_items.freezed.dart';
 
 @freezed
 class PrItems with _$PrItems{

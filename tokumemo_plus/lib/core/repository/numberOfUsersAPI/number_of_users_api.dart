@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'numberOfUsersAPI.g.dart';
-part 'numberOfUsersAPI.freezed.dart';
+
+part 'number_of_users_api.g.dart';
+part 'number_of_users_api.freezed.dart';
 
 @freezed
 class NumberOfUsers with _$NumberOfUsers {

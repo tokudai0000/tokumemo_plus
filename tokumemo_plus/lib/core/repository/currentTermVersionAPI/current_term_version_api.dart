@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'currentTermVersionAPI.g.dart';
-part 'currentTermVersionAPI.freezed.dart';
+part 'current_term_version_api.g.dart';
+part 'current_term_version_api.freezed.dart';
 
 @freezed
 class CurrentTermVersion with _$CurrentTermVersion{

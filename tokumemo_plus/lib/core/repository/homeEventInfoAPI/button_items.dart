@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'buttonItems.g.dart';
-part 'buttonItems.freezed.dart';
+part 'button_items.g.dart';
+part 'button_items.freezed.dart';
 
 @freezed
 class ButtonItems with _$ButtonItems {
