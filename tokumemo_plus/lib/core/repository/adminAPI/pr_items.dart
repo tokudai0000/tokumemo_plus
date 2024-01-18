@@ -6,7 +6,11 @@ part 'pr_items.freezed.dart';
 @freezed
 class PrItems with _$PrItems{
   const factory PrItems({
-    required String prItems
+    required int id,
+    required String clientName,
+    required String imageUrlStr,
+    required String targetUrlStr,
+    required String imageDescription,
   }) = _PrItems;
   // json形式で受け取るためのコードを生成するために記述
   factory PrItems.fromJson(Map<String, dynamic> json) =>

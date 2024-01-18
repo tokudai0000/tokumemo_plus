@@ -7,7 +7,7 @@ import 'numberOfUsersAPI/number_of_users_api.dart';
 import 'termTextAPI/term_text_api.dart';
 import 'homeEventInfoAPI/home_event_info_api.dart';
 
-part 'apis.g.dart';
+part 'api.g.dart';
 
 // ここにapiのエンドポイントを記載します
 @RestApi(baseUrl: "https://tokudai0000.github.io/tokumemo_resource/")

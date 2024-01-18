@@ -7,10 +7,11 @@ part 'aditem_api.freezed.dart';
 
 @freezed
 class AdItems with _$AdItems {
+  @JsonSerializable(explicitToJson: true)
   // プロパティを指定
   const factory AdItems({
-    required PrItems prItems,
-    required UnivItems univItems,
+    required List<PrItems> prItems,
+    required List<UnivItems> univItems,
   }) = _Aditems;
   // json形式で受け取るためのコードを生成するために記述
   factory AdItems.fromJson(Map<String, dynamic> json) => _$AdItemsFromJson(json);

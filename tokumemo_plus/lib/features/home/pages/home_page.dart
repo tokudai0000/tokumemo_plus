@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-class HomePage extends ConsumerWidget {
+import 'package:tokumemo_plus/features/features.dart';
+class HomePage extends ConsumerStatefulWidget{
   const HomePage({super.key});
-
   static String get pageName => 'home';
-
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-
+  HomePageState createState()=>HomePageState();
+}
+class HomePageState extends ConsumerState<HomePage> {
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('home_page'),
-      ),
-      body: Center(
-        child: Text(
-          'home_page',
-          style: TextStyle(fontSize: 24),
+      body:SingleChildScrollView(
+        child: Column(
+          children: [
+
+          ],
         ),
       ),
     );

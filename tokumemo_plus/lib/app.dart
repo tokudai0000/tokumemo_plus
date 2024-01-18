@@ -11,6 +11,7 @@ class App extends ConsumerWidget {
     final router = routerProvider;
     return MaterialApp.router(
       title: 'トクメモ＋',
+      debugShowCheckedModeBanner: false,//Debugのバナーを消す
 
       // ルーティングに関連する設定
       routeInformationParser: router.routeInformationParser, // URLからルート情報を解析
