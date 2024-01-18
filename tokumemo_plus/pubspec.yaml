@@ -19,7 +19,7 @@ dependencies:
   cupertino_icons: ^1.0.2
 
   # Riverpod
-  flutter_riverpod:
+  flutter_riverpod: ^2.4.9
   # 機能は最小限に。必要な時に使用
   hooks_riverpod:
 
@@ -34,6 +34,16 @@ dependencies:
 
   # 起動画面(表示設定はpubspec.yaml内の下部にある)
   flutter_native_splash:
+  dio: ^5.4.0
+  retrofit: ^4.0.3
+  freezed: ^2.4.6
+  freezed_annotation: ^2.4.1
+  json_annotation: ^4.8.1
+  flutter_secure_storage: ^9.0.0
+  logger: ^2.0.2+1
+  riverpod_annotation: ^2.3.3
+  flutter_hooks: ^0.20.4
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:
@@ -45,6 +55,12 @@ dev_dependencies:
   # Static analysis
   # 静的解析ツール
   pedantic_mono:
+  build_runner: ^2.4.7
+  retrofit_generator: ^8.0.6
+  json_serializable: ^6.7.1
+  riverpod_generator: ^2.3.9
+  custom_lint: ^0.5.7
+  riverpod_lint: ^2.3.7
 # 後々実装したい、https://zenn.dev/minedia/articles/61a9a107211422
 #  custom_lint:
 # 後々実装したい、https://blog.dalt.me/3697

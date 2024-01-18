@@ -3,14 +3,14 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:page_transition/page_transition.dart';
-
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../home/pages/home_page.dart';
 import '../../setting/pages/setting_page.dart';
 import '../../club_list/pages/club_list_page.dart';
 import '../../news/pages/news_page.dart';
 import 'widgets/tab_navigator.dart';
 
-class MainPage extends HookConsumerWidget {
+class MainPage extends ConsumerWidget {
   const MainPage({super.key});
 
   static String get pageName => 'main';
